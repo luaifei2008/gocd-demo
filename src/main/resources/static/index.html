@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<script type="text/javascript"
+        src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js">
+</script>
+
+<body>
+    <input type="button" value="查询时间" id="queryBtn"/> <br/>
+    <div id="date" style="height: 100px; background-color: chartreuse"></div>
+</body>
+<script>
+    $("#queryBtn").click(
+        function() {
+            $.get("/getTodayDateStr",
+                function (data) {
+                    $("#date").text("Today is " + data);
+                }
+            )
+        }
+    );
+</script>
+</html>
